@@ -1,0 +1,22 @@
+{
+  "name": "personal-data-website",
+  "version": "1.0.0",
+  "description": "A personal data storage website for university, home, and office information.",
+  "main": "src/js/main.js",
+  "scripts": {
+    "build": "postcss src/css/styles.css -o public/assets/styles.css",
+    "watch": "postcss src/css/styles.css -o public/assets/styles.css --watch",
+    "start": "live-server public"
+  },
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^5.3.8",
+    "tailwindcss": "^2.2.19"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "live-server": "^1.2.1",
+    "postcss": "^8.5.6"
+  }
+}

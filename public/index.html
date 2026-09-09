@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal List</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/tailwind.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body class="bg-gradient-to-br from-blue-100 to-purple-200 min-h-screen">
+    <div class="container mx-auto py-10">
+        <div
+            class="flex flex-col items-center rounded-3xl shadow-2xl p-10 mb-10 border-2 border-purple-200 hero-bg relative">
+            <div class="absolute inset-0 rounded-3xl" style="background: rgba(60,0,100,0.35); z-index:1;"></div>
+            <div class="relative z-10 text-center w-full">
+                <h1 class="text-5xl font-extrabold text-white mb-2 tracking-tight drop-shadow-lg">Add Today Task</h1>
+                <br><br><br><br>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <button type="button"
+                        class="main-btn btn btn-primary btn-uni px-5 py-2 rounded-lg font-semibold shadow-lg"
+                        data-bs-toggle="modal" data-bs-target="#universityModal">University</button>
+                    <button type="button"
+                        class="main-btn btn btn-success btn-home px-5 py-2 rounded-lg font-semibold shadow-lg"
+                        data-bs-toggle="modal" data-bs-target="#homeModal">Home</button>
+                    <button type="button"
+                        class="main-btn btn btn-info btn-office px-5 py-2 rounded-lg font-semibold shadow-lg"
+                        data-bs-toggle="modal" data-bs-target="#officeModal">Office</button>
+                </div>
+            </div>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- University Section -->
+            <section id="university"
+                class="section-card bg-white rounded-2xl shadow-lg p-0 border-t-4 border-blue-400 flex flex-col overflow-hidden">
+                <img src="../public/images/photo-1756024241621-2a2579f71bbe.avif" alt="University"
+                    class="w-full h-40 object-cover">
+                <div class="p-8">
+                    <h3 class="text-2xl font-bold text-blue-600 mb-3 flex items-center">
+                        <svg class="w-6 h-6 mr-2 text-blue-400" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24">
+                            <path d="M12 3l9 4.5-9 4.5-9-4.5L12 3z" />
+                            <path d="M3 17.25V9.75l9 4.5 9-4.5v7.5" />
+                            <path d="M21 21.75V19.5a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 19.5v2.25" />
+                        </svg>
+                        University Task
+                    </h3>
+                    <p class="text-gray-700 mb-1">Minhaj University, Lahore</p>
+                    <p class="text-gray-700 mb-1">BS Software Engineering</p>
+                    <ul id="universityTasks" class="task-list"></ul>
+                </div>
+            </section>
+            <!-- Home Section -->
+            <section id="home"
+                class="section-card bg-white rounded-2xl shadow-lg p-0 border-t-4 border-green-400 flex flex-col overflow-hidden">
+                <img src="../public/images/123.avif" alt="Home" class="w-full h-40 object-cover">
+                <div class="p-8">
+                    <h3 class="text-2xl font-bold text-green-600 mb-3 flex items-center">
+                        <svg class="w-6 h-6 mr-2 text-green-400" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24">
+                            <path d="M3 12l9-9 9 9" />
+                            <path d="M9 21V9h6v12" />
+                        </svg>
+                        Home Task
+                    </h3>
+                    <p class="text-gray-700 mb-1">City: Lahore</p>
+                    <ul id="homeTasks" class="task-list"></ul>
+                </div>
+            </section>
+            <!-- Office Section -->
+            <section id="office"
+                class="section-card bg-white rounded-2xl shadow-lg p-0 border-t-4 border-purple-400 flex flex-col overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=600&q=80"
+                    alt="Office" class="w-full h-40 object-cover">
+                <div class="p-8">
+                    <h3 class="text-2xl font-bold text-purple-600 mb-3 flex items-center">
+                        <svg class="w-6 h-6 mr-2 text-purple-400" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24">
+                            <path d="M3 7V6a2 2 0 012-2h14a2 2 0 012 2v1" />
+                            <path d="M16 21v-4a2 2 0 00-2-2H10a2 2 0 00-2 2v4" />
+                            <path d="M12 11v.01" />
+                        </svg>
+                        Office Task
+                    </h3>
+                    <p class="text-gray-700">Company: Extreme Control Engineering</p>
+                    <ul id="officeTasks" class="task-list"></ul>
+                </div>
+            </section>
+        </div>
+        <footer class="mt-16 text-center text-gray-500">
+            &copy; 2025 Adeel Musa | Minhaj University
+        </footer>
+    </div>
+
+    <!-- University Modal -->
+    <div class="modal fade" id="universityModal" tabindex="-1" aria-labelledby="universityModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content rounded-3xl">
+                <div class="modal-header bg-primary text-white rounded-top-3">
+                    <h5 class="modal-title" id="universityModalLabel">Add Today Task - University</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <form id="universityForm">
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <textarea class="form-control" id="universityTask" rows="4"
+                                placeholder="Add Task"></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Add Task</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Home Modal -->
+    <div class="modal fade" id="homeModal" tabindex="-1" aria-labelledby="homeModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content rounded-3xl">
+                <div class="modal-header bg-success text-white rounded-top-3">
+                    <h5 class="modal-title" id="homeModalLabel">Add Today Task - Home</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <form id="homeForm">
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <textarea class="form-control" id="homeTask" rows="4" placeholder="Add Task"></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-success">Add Task</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Office Modal -->
+    <div class="modal fade" id="officeModal" tabindex="-1" aria-labelledby="officeModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content rounded-3xl">
+                <div class="modal-header bg-info text-white rounded-top-3">
+                    <h5 class="modal-title" id="officeModalLabel">Add Today Task - Office</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <form id="officeForm">
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <textarea class="form-control" id="officeTask" rows="4" placeholder="Add Task"></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-info">Add Task</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
